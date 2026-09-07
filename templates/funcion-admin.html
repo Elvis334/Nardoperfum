@@ -1,0 +1,52 @@
+{% extends "layout1.html" %}
+{%block css%}
+    <link rel="stylesheet" href="../static/css/style.css">
+{%endblock%}
+
+{%block contenido%}
+<div>
+  <br>
+  <form action="/admin/agregar-funciones" method="post">
+
+      <div class="mb-3">
+          <label for="pelicula" class="text-info">Pelicula:</label><br>
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="pelicula">
+            <option selected>Seleccione Pelicula</option>
+            {% for pelicula in peliculas %}
+            <option value="{{ pelicula['pelicula_id'] }}">{{ pelicula["nombre"] }}</option>
+
+            {% endfor %}
+          </select>
+      </div>
+
+      <div class="mb-3">
+          <label for="sala" class="text-info">Sala:</label><br>
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="sala">
+            <option selected>Seleccione Sala</option>
+            {% for sala in salas %}
+            <option value="{{ sala['sala_id'] }}">{{ sala["sala_id"] }}</option>
+
+            {% endfor %}
+          </select>
+      </div>
+
+      <div class="mb-3">
+          <label for="inicio" class="text-info">Hora de Inicio:</label><br>
+          <input autocomplete="off" class="form-control mx-auto w-auto" name="hora_inicio" placeholder="HH-MM-SS" type="datetime-local">
+      </div>
+
+      <div class="mb-3">
+          <label for="fin" class="text-info">Hasta:</label><br>
+          <input autocomplete="off" class="form-control mx-auto w-auto" name="hora_fin" placeholder="HH-MM-SS" type="datetime-local">
+      </div>
+
+      <div class="mb-3">
+        <label for="fin" class="text-info">Precio:</label><br>
+        <input autocomplete="off" class="form-control mx-auto w-auto" name="precio" placeholder="Precio" type="number">
+    </div>
+      <button class="btn btn-primary" type="submit">Añadir</button>
+  </form>
+</div>
+
+{%endblock%}
+

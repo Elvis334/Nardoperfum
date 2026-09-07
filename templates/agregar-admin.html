@@ -1,0 +1,47 @@
+{% extends "layout1.html" %}
+{%block css%}
+    <link rel="stylesheet" href="../static/css/style.css">
+{%endblock%}
+
+
+{%block contenido%}
+      <div>
+        <br>
+        <form action="/admin/agregar-peliculas" method="post">
+
+            <div class="mb-3">
+                <label for="titulo" class="text-info">Nombre:</label><br>
+                <input autocomplete="off" autofocus="" class="form-control mx-auto w-auto" name="nombre" placeholder="Titulo" type="text">
+            </div>
+
+            <div class="mb-3">
+                <label for="duracion" class="text-info">Duracion:</label><br>
+                <input autocomplete="off" class="form-control mx-auto w-auto" min="1" name="duracion" placeholder="minutos" type="number">
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha_inicio" class="text-info">Fecha de estreno:</label><br>
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="fecha_inicio" placeholder="AAAA-MM-DD" type="date">
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha_fin" class="text-info">Ultima Fecha:</label><br>
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="fecha_fin" placeholder="AAAA-MM-DD" type="date">
+            </div>
+
+            <div class="mb-3">
+                <label for="sinopsis" class="text-info">Sinopsis:</label><br>
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="sinopsis" placeholder="sinopsis" type="text">
+            </div>
+
+
+            <div class="mb-3">
+              <label for="sinopsis" class="text-info">Imagen</label><br>
+              <input autocomplete="off" class="form-control mx-auto w-auto" name="imagen" placeholder="url imagen" type="text">
+          </div>
+
+
+            <button class="btn btn-primary" type="submit">Añadir</button>
+        </form>
+      </div>
+{%endblock%}

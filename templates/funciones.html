@@ -1,0 +1,56 @@
+{%extends "layout.html"%}
+
+{%block css%}
+<link href="../static/css/funciones.css" rel="stylesheet">
+{%endblock%}
+
+{%block contenido%}
+<body>
+  <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Lado izquierdo con la imagen -->
+        <div class="col-md-6">
+          <img src="{{ pelicula["imagen"] }}" alt="Imagen Vertical" class="img-fluid">
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="text-center">
+            <h2>{{ pelicula["nombre"] }}</h2>
+            Sinopsis:
+            <p> {{ pelicula["sinopsis"] }}</p>
+            Duracion: {{ pelicula["duracion"] }} minutos
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h2> Funciones </h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"> Sala</th>
+          <th scope="col">Hora Inicio</th>
+          <th scope="col">Hora Fin</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for funcion in funciones %}
+        <tr>
+          <td>{{ funcion["sala_id"] }}</td>
+          <td>{{ funcion["hora_inicio"] }}</td>
+          <td>{{ funcion["hora_fin"] }}</td>
+          <td>{{ funcion["precio"] }}</td>
+          <td> <a href="/comprar/funcion/{{funcion["funcion_id"]}}"> Comprar Funcion </a> </td>
+
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+  {%endblock%}

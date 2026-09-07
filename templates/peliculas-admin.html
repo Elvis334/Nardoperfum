@@ -1,0 +1,59 @@
+{% extends "layout1.html" %}
+{%block css%}
+    <link rel="stylesheet" href="../static/css/style.css">
+{%endblock%}
+
+{%block contenido%}
+<h2> Lista de Peliculas </h2>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha de finalizacion</th>
+      <th scope="col"> Duracion </th>
+      <th scope="col"> Editar </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pelicula in peliculas %}
+    <tr>
+      <th scope="row">{{ pelicula["nombre"] }}</th>
+      <td>{{pelicula["fecha_inicio"]}}</td>
+      <td>{{pelicula["fecha_fin"]}}</td>
+      <td>{{pelicula["duracion"]}}</td>
+      <td> <a href="/admin/editar-peliculas/{{ pelicula['pelicula_id'] }}"> Editar Pelicula</a> </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+
+<h2> Lista de funciones </h2>
+
+
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Pelicula</th>
+      <th scope="col">Sala</th>
+      <th scope="col">Hora Inicio</th>
+      <th scope="col"> Hora Finalizacion </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for funcion in funciones %}
+    <tr>
+      <th scope="row">{{ funcion["nombre"] }}</th>
+      <td>{{funcion["sala_id"]}}</td>
+      <td>{{funcion["hora_inicio"]}}</td>
+      <td>{{funcion["hora_fin"]}}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{%endblock%}
+

@@ -1,0 +1,29 @@
+.index{
+    background-image: url("/static/img/fondoprincipal1.jpeg")
+}
+.navbar-brand {
+    background-color: white;
+    margin: 3px;
+    padding: 15px;
+    border: solid 1px black;
+}
+.nav-link {
+    background-color: white;
+    margin: 3px;
+    padding: 15px;
+    border: solid 1px black;
+}
+h1{
+    border: solid 2px green;
+}
+
+.carousel-inner{
+    background-size: cover;
+    background-position: left;
+    margin: 300px;
+    height: 600px;
+}
+
+.btn{
+    position: right;
+}

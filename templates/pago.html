@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Formulario de Pago de Entradas</title>
+</head>
+<body>
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Pago de Entradas</h2>
+  <h3> Pelicula </h3>
+  <h4>  {{ funcion["nombre"] }} </h4>
+
+  <h3> Sala </h3>
+  <h4>  {{ funcion["sala_id"] }} </h4>
+
+  <h3> Horario </h3>
+  <h4>  {{ funcion["hora_inicio"] }}  -  {{ funcion["hora_inicio"] }} </h4>
+
+
+  <form action="/comprar/funcion/{{funcion["funcion_id"]}}" method="POST">
+
+
+
+
+
+    <!-- Cantidad de entradas -->
+    <div class="form-group">
+      <label for="entradas">Cantidad de Entradas:</label>
+      <input name="entradas" type="number" class="form-control" id="cantidadEntradas" min="1" value="1">
+    </div>
+
+    <!--precio total-->
+    <div class="form-group">
+      <label for="nombre">precio por boleto</label>
+      <h5>  {{ funcion["precio"] }} </h5>
+    </div>
+
+    <!-- Botón de pago -->
+    <button type="submit" class="btn btn-primary btn-block">Pagar</button>
+  </form>
+</div>
+
+<!-- Scripts de Bootstrap (jQuery primero, luego Popper.js, y finalmente Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
